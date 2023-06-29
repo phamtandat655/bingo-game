@@ -100,3 +100,12 @@
         }
     }
 }
+
+@media screen and (max-width : 850px) {
+    .ticket-wrapper {
+        width: 320px;
+
+        padding-top: 20px;
+        padding-bottom: 35px;
+    }
+ }

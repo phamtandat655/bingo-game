@@ -48,3 +48,14 @@
         }
     }
 }
+
+@media screen and (max-width : 850px) {
+    .randomnumber-wrapper {
+       margin-left: 0;
+       margin-bottom: 10px;
+
+       .randomnumber-container {
+            width: 350px;
+       }
+    }
+ }
