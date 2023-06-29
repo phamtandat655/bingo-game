@@ -1,0 +1,39 @@
+.randomnumber-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-left: 50px;
+
+    h3 {
+        padding: 0;
+        margin: 0 0 10px 0;
+    }
+
+    .randomnumber-container {
+        display: flex;
+
+        width: 500px;
+        min-height: 55px;
+
+        padding: 10px;
+        overflow-y: hidden;
+        overflow-x: scroll;
+
+        div {
+            margin: 2px 4px;
+            min-width: 30px;
+            min-height: 30px;
+            flex-basis: 30px;
+
+            border: 1px solid gray;
+            cursor: pointer;
+
+            user-select: none;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
