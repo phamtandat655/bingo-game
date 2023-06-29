@@ -13,15 +13,19 @@ const RandomNumber = () => {
   return (
     <div className="randomnumber-wrapper">
       <h3>The number has been random !</h3>
-      <div className="randomnumber-container">
-        {numberList.map((number, index) => {
-          return (
-            <div key={index} onClick={(e) => handleOnclickNumber(number)}>
-              {number}
-            </div>
-          );
-        })}
-      </div>
+      {numberList.length > 0 ? (
+        <div className="randomnumber-container">
+          {numberList.map((number, index) => {
+            return (
+              <div key={index} onClick={(e) => handleOnclickNumber(number)}>
+                {number}
+              </div>
+            );
+          })}
+        </div>
+      ) : (
+        <div className="randomnumber-container empty">Empty !</div>
+      )}
     </div>
   );
 };
