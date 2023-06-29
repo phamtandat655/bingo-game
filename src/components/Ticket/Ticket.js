@@ -26,7 +26,7 @@ const Ticket = ({ numberArr, numberOfTicket }) => {
     if (numberList.length < 1) {
       setBingo('');
     }
-  }, [numberList]);
+  }, [numberList, numberArr, numberOfTicket]);
 
   // 'bingo'
   return (
@@ -36,7 +36,7 @@ const Ticket = ({ numberArr, numberOfTicket }) => {
         <div className="ticket-left">
           {numberArr.map((numberOfRowList, index) => {
             if (index >= numberArr.length / 2) {
-              return;
+              return null;
             }
             return <RowInTicket numberOfRowList={numberOfRowList} key={index} />;
           })}
@@ -46,7 +46,7 @@ const Ticket = ({ numberArr, numberOfTicket }) => {
             if (index >= numberArr.length / 2) {
               return <RowInTicket numberOfRowList={numberOfRowList} key={index} />;
             }
-            return;
+            return null;
           })}
         </div>
       </div>
