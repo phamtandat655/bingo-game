@@ -4,9 +4,10 @@ const RandomNumberContext = createContext();
 
 const RandomNumberProvider = ({ children }) => {
   const [numberList, setNumberList] = useState([]);
+  const [isBingo, setIsBingo] = useState(false);
 
   return (
-    <RandomNumberContext.Provider value={{ numberList, setNumberList }}>
+    <RandomNumberContext.Provider value={{ numberList, setNumberList, isBingo, setIsBingo }}>
       {children}
     </RandomNumberContext.Provider>
   );

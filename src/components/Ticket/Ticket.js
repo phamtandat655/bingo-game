@@ -3,35 +3,38 @@ import './Ticket.scss';
 import RowInTicket from '../RowInTicket/RowInTicket';
 import { useRandomNumberContext } from '../../context/RandomNumberProvider';
 
-const Ticket = ({ numberArr, numberOfTicket }) => {
-  const { numberList } = useRandomNumberContext();
+const Ticket = ({ numberArr, nameOfTicket }) => {
+  const { numberList, setIsBingo } = useRandomNumberContext();
   const [bingo, setBingo] = useState('');
 
   useEffect(() => {
     for (let i = 0; i < numberArr.length; i++) {
       let checkArr = numberList.filter((n) => numberArr[i].includes(n));
       if (checkArr.length >= 5) {
+        setIsBingo(true);
         setBingo('bingo');
 
         setTimeout(() => {
-          alert(`Player number ${numberOfTicket} has won bingo ! Bingo at line ${i + 1}`);
-        }, 100);
+          if (bingo !== 'bingo') alert(`${nameOfTicket} has won bingo ! Bingo at line ${i + 1}`);
+        }, 500);
 
         return;
       } else {
+        if (bingo === 'bingo') setIsBingo(false);
         setBingo('');
       }
     }
 
     if (numberList.length < 1) {
+      setIsBingo(false);
       setBingo('');
     }
-  }, [numberList, numberArr, numberOfTicket]);
+  }, [numberList, numberArr, nameOfTicket, bingo, setIsBingo]);
 
   // 'bingo'
   return (
     <div className={`ticket-wrapper ${bingo}`}>
-      <div className="ticket-header">{numberOfTicket && numberOfTicket}</div>
+      <div className="ticket-header">{nameOfTicket && nameOfTicket}</div>
       <div className="ticket-container">
         <div className="ticket-left">
           {numberArr.map((numberOfRowList, index) => {
