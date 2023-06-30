@@ -32,7 +32,44 @@
     }
 
     &.bingo {
-        animation: animateBorder 1s linear infinite forwards , changeColor 2s linear infinite;
+        animation: animateBorder 1s linear infinite forwards , changeColor 3s linear infinite;
+
+        &.Purple-sim {
+            color: #EE82EE;
+        }
+        &.Green {
+            color: #008000;
+        }
+        &.Blue {
+            color: #007FFF;
+        }
+        &.Green-bananas {
+            color: #66ff00;
+        }
+        &.Bruised-red {
+            color: #8B0000;
+        }
+        &.Dark-green {
+            color: #006400;
+        }
+        &.Brown-soil {
+            color: #8B4513;
+        }
+        &.Gold-9999 {
+            color: yellow;
+        }
+        &.Milk-oranges {
+            color: #FFA500;
+        }
+        &.Pink-babe {
+            color: pink;
+        }
+        &.Dark-orange {
+            color: #de4604;
+        }
+        &.Turquoise {
+            color: #98ede7;
+        }
 
         .ticket-header {
             color: white;
@@ -42,48 +79,40 @@
 
         @keyframes changeColor {
             0%{
-                background-color: #FF0000;
+                background-color: currentColor;
             } 17% {
-                background-color: #FF7F00;
+                background-color: unset;
             } 32% {
-                background-color: #FFFF00;
+                background-color: currentColor;
             } 47% {
-                background-color: rgb(0 ,255 , 0);
+                background-color: unset;
             } 63% {
-                background-color: #0000FF;
+                background-color: currentColor;
             } 75% {
-                background-color: #4B0082;
+                background-color: unset;
             } 90% {
-                background-color: #8F00FF;
+                background-color: currentColor;
             }  100% {
-                background-color: #8F00FF;
+                background-color: unset;
             } 
         }
         
         @keyframes animateBorder {
             0%{
-                // border-color: #FF0000;
                 transform: scale(0.99);
             } 17% {
-                // border-color: #FF7F00;
                 transform: scale(1);
             } 32% {
-                // border-color: #FFFF00;
                 transform: scale(0.99);
             } 47% {
-                // border-color: rgb(0 ,255 , 0);
                 transform: scale(1);
             } 63% {
-                // border-color: #0000FF;
                 transform: scale(0.99);
             } 75% {
-                // border-color: #4B0082;
                 transform: scale(1);
             } 90% {
-                // border-color: #8F00FF;
                 transform: scale(0.99);
             }  100% {
-                // border-color: #8F00FF;
                 transform: scale(1);
             } 
         }
@@ -116,6 +145,7 @@
         background-color: white;
         position: relative;
         z-index: 10px;
+        color: black;
 
         .ticket-left {
             padding-right: 10px;

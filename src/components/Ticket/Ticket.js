@@ -31,9 +31,40 @@ const Ticket = ({ numberArr, nameOfTicket }) => {
     }
   }, [numberList, numberArr, nameOfTicket, bingo, setIsBingo]);
 
+  const getColorOfTicket = (nameOfTicket) => {
+    switch (nameOfTicket) {
+      case 'Tím sim':
+        return 'Purple-sim';
+      case 'Xanh lá':
+        return 'Green';
+      case 'Xanh dương':
+        return 'Blue';
+      case 'Xanh chuối':
+        return 'Green-bananas';
+      case 'Đỏ bầm':
+        return 'Bruised-red';
+      case 'Xanh đen':
+        return 'Dark-green';
+      case 'Nâu đất':
+        return 'Brown-soil';
+      case 'Vàng 9999':
+        return 'Gold-9999';
+      case 'Cam sữa':
+        return 'Milk-oranges';
+      case 'Hồng babi':
+        return 'Pink-babe';
+      case 'Cam đậm':
+        return 'Dark-orange';
+      case 'Xanh ngọc':
+        return 'Turquoise';
+      default:
+        return '';
+    }
+  };
+
   // 'bingo'
   return (
-    <div className={`ticket-wrapper ${bingo}`}>
+    <div className={`ticket-wrapper ${bingo} ${getColorOfTicket(nameOfTicket)}`}>
       <div className="ticket-header">{nameOfTicket && nameOfTicket}</div>
       <div className="ticket-container">
         <div className="ticket-left">
