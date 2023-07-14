@@ -6,6 +6,29 @@ import Ticket from './components/Ticket/Ticket';
 import { useRandomNumberContext } from './context/RandomNumberProvider';
 import data from './data/data.json';
 
+// import firebase to deploy hosting
+// Import the functions you need from the SDKs you need
+import { initializeApp } from 'firebase/app';
+import { getAnalytics } from 'firebase/analytics';
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: 'AIzaSyDdibpBx4ZsWszPj0DZk4HzKB3e_jZ02CM',
+  authDomain: 'bingo-minigame.firebaseapp.com',
+  projectId: 'bingo-minigame',
+  storageBucket: 'bingo-minigame.appspot.com',
+  messagingSenderId: '612655131414',
+  appId: '1:612655131414:web:f99cddb738fb54c3defe37',
+  measurementId: 'G-4492HJ705B',
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
 function App() {
   const ticketList = Object.values(data);
 

@@ -35,7 +35,7 @@
         animation: animateBorder 1s linear infinite forwards , changeColor 3s linear infinite;
 
         &.Purple-sim {
-            color: #EE82EE;
+            color: purple;
         }
         &.Green {
             color: #008000;
@@ -70,12 +70,40 @@
         &.Turquoise {
             color: #98ede7;
         }
+        &.PastelPink {
+            color: #C88BD9;
+        }
+        &.Rainbow {
+            animation: animateBorder 1s linear infinite forwards , changeLinearColor 3s linear infinite;
+        }
+        &.MossGreen {
+            color: #345F3C;
+        }
 
         .ticket-header {
             color: white;
             text-shadow: 0px 0px 5px black;
         }
 
+        @keyframes changeLinearColor {
+            0%{
+                background-image: linear-gradient(to right,#c6ffdd ,#fbd786 ,#f7797d);
+            } 17% {
+                background-image: unset;
+            } 32% {
+                background-image: linear-gradient(to right,#c6ffdd ,#fbd786 ,#f7797d);
+            } 47% {
+                background-image: unset;
+            } 63% {
+                background-image: linear-gradient(to right,#c6ffdd ,#fbd786 ,#f7797d);
+            } 75% {
+                background-image: unset;
+            } 90% {
+                background-image: linear-gradient(to right,#c6ffdd ,#fbd786 ,#f7797d);
+            }  100% {
+                background-image: unset;
+            } 
+        }
 
         @keyframes changeColor {
             0%{

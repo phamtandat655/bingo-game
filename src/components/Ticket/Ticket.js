@@ -57,11 +57,16 @@ const Ticket = ({ numberArr, nameOfTicket }) => {
         return 'Dark-orange';
       case 'Xanh ngọc':
         return 'Turquoise';
+      case 'Hồng pastel':
+        return 'PastelPink';
+      case 'Cầu vồng':
+        return 'Rainbow';
+      case 'Xanh rêu':
+        return 'MossGreen';
       default:
         return '';
     }
   };
-
   // 'bingo'
   return (
     <div className={`ticket-wrapper ${bingo} ${getColorOfTicket(nameOfTicket)}`}>
